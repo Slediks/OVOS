@@ -1,4 +1,4 @@
-name: Docker Image CI
+name: Docker Lint
 
 on:
   push:
@@ -9,10 +9,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
 
       - name: Set up Hadolint
-        uses: hadolint/hadolint-action@v2
+        uses: hadolint/hadolint-action@v3.1.0
 
       - name: Run Hadolint lab 2
         run: hadolint ./lab2/Dockerfile
