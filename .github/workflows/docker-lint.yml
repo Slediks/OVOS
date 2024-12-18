@@ -15,7 +15,6 @@ jobs:
           output-file: ./lint-out
           no-fail: true
           verbose: true
-          format: checkstyle
 
       - uses: actions/upload-artifact@v4
         with:
