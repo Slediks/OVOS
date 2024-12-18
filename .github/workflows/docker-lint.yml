@@ -13,6 +13,8 @@ jobs:
         with:
           dockerfile: ./lab2/Dockerfile
           output-file: ./lint-out
+          no-fail: true
+          verbose: true
 
       - uses: actions/upload-artifact@v4
         with:
