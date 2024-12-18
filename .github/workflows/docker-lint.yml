@@ -12,3 +12,9 @@ jobs:
       - uses: hadolint/hadolint-action@v3.1.0
         with:
           dockerfile: ./lab2/Dockerfile
+          output-file: ./lint-out
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: my-artifact
+          path: ./lint-out
