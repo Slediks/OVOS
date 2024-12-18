@@ -1,0 +1,22 @@
+name: Docker Lint
+
+on:
+  push:
+    branches: [ "master" ]
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: hadolint/hadolint-action@v3.1.0
+        with:
+          dockerfile: ./lab2/Dockerfile
+          output-file: ./lint-out
+          no-fail: true
+          verbose: true
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: my-artifact
+          path: ./lint-out
